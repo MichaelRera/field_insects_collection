@@ -64,19 +64,6 @@
     // Use PapaParse to convert string to array of objects
     var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
     
-    var myIcon = L.icon({
-      iconUrl: 'my-icon.png',
-      iconSize: [38, 95],
-      iconAnchor: [22, 94],
-      popupAnchor: [-3, -76],
-      shadowUrl: 'my-icon-shadow.png',
-      shadowSize: [68, 95],
-      shadowAnchor: [22, 94]
-     });
-
-
-
-    
     
 
     // For each row in data, create a marker and add it to the map
