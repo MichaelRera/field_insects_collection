@@ -78,14 +78,7 @@
     
     L.control.scale().addTo(map);
     
-    L.marker(["8.7010305", "-83.2016955"], {}).addTo(map).bindPopup('Tropen Station La Gamba').openPopup();
-    
-    var leafIcon = helper.getIcon(
-{icon: 'leaf',
-markerColor: 'red'}
-);
-L.marker(["43.527414", "-96.741249"], {icon: leafIcon}).addTo(map)
-.bindPopup('The Location');
+    L.marker(["8.7010305", "-83.2016955"], {markerColor: 'red'}).addTo(map).bindPopup('Tropen Station La Gamba').openPopup();
 
   map.attributionControl.setPrefix(
     'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
