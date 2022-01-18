@@ -77,8 +77,17 @@
   });
     
     L.control.scale().addTo(map);
+    
+    var tropenstation = helper.getIcon({markerColor: 'red'});
    
-    L.marker(["8.7010305", "-83.2016955"], {markerColor: 'red'}).addTo(map).bindPopup('Tropen Station La Gamba');
+    L.marker(["8.7010305", "-83.2016955"], {icon: tropenstation}).addTo(map).bindPopup('Tropen Station La Gamba');
+    
+    var leafIcon = helper.getIcon(
+{icon: 'leaf',
+markerColor: 'red'}
+);
+L.marker(["43.527414", "-96.741249"], {icon: leafIcon}).addTo(map)
+.bindPopup('The Location');
 
   map.attributionControl.setPrefix(
     'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
