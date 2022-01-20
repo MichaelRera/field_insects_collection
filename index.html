@@ -59,6 +59,17 @@
     subdomains:['mt0','mt1','mt2','mt3']
   }).addTo(map);
   controlLayers.addBaseLayer(googleSat, 'Google Sattellite view');
+    
+  var popup = L.popup();
+
+  function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+  }
+
+map.on('click', onMapClick);
 
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
