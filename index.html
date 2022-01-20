@@ -70,6 +70,13 @@
   }
 
 map.on('click', onMapClick);
+  
+    var polygon = L.polygon([
+      [8.700881, -83.207703],
+      [8.701432, -83.211211],
+      [8.703214, -83.21458],
+      [8.704582, -83.205214]
+    ]).addTo(map);
 
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
