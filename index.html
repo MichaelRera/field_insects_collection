@@ -76,7 +76,7 @@ map.on('click', onMapClick);
       [8.701432, -83.211211],
       [8.703214, -83.21458],
       [8.704582, -83.205214]],
-      {color: 'red'}).addTo(map).bindPopup('Traps set up on 19/01/22').openPopup();
+      {color: 'green'}).addTo(map).bindPopup('Traps set up on 19/01/22').openPopup();
     
      var polygon = L.polygon([
       [8.700674, -83.208126],
@@ -84,6 +84,14 @@ map.on('click', onMapClick);
       [8.700261, -83.204468],
       [8.702413, -83.203964]],
       {color: 'red'}).addTo(map)
+     
+     var polygon = L.polygon([
+      [8.681154, -83.196738],
+      [8.673179, -83.202059],
+      [8.660536, -83.198712],
+      [8.658033, -83.194034],
+      [8.659815, -83.191717]],
+      {color: 'orange'}).addTo(map)
 
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
