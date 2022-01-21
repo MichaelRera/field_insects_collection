@@ -133,9 +133,9 @@
       var radius = e.accuracy / 2;
 
       current_position = L.marker(e.latlng).addTo(map)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+        .bindPopup(e.latlng + " +/- " + radius + " m").openPopup();
 
-      current_accuracy = L.circle(e.latlng, radius).addTo(map);
+      current_accuracy = L.circle(e.latlng, radius, {color:'red'}).addTo(map);
     }
 
     function onLocationError(e) {
