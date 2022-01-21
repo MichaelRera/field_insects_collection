@@ -117,7 +117,7 @@ map.on('click', onMapClick);
     
     L.control.scale().addTo(map);
     
-    L.marker(["8.7010305", "-83.2016955"], {markerColor: 'red'}).addTo(map).bindPopup('Tropen Station La Gamba').openPopup();
+    L.marker(["8.7010305", "-83.2016955"], {color: 'red'}).addTo(map).bindPopup('Tropen Station La Gamba').openPopup();
     
     
         // placeholders for the L.marker and L.circle representing user's current position and accuracy    
@@ -133,7 +133,7 @@ map.on('click', onMapClick);
       var radius = e.accuracy / 2;
 
       current_position = L.marker(e.latlng).addTo(map)
-        .bindPopup("+/-" + radius + " m").openPopup();
+        .bindPopup(e.latlng + "+/-" + radius + " m").openPopup();
 
       current_accuracy = L.circle(e.latlng, radius,{color:'red'}).addTo(map);
     }
@@ -147,7 +147,7 @@ map.on('click', onMapClick);
 
     // wrap map.locate in a function    
     function locate() {
-      map.locate({setView: true, maxZoom: 16});
+      map.locate({setView: false, maxZoom: 16});
     }
 
     // call locate every 3 seconds... forever
