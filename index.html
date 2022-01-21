@@ -149,7 +149,7 @@ map.on('click', onMapClick);
       //current_position = L.marker(e.latlng, {color:'red'}).addTo(map)
       //  .bindPopup(e.latlng + " +/- " + radius + " m").openPopup();
 
-      current_accuracy = L.circle(e.latlng, radius, {color:'red'}).addTo(map);
+      current_accuracy = L.circle(e.latlng, radius, {color:'red'}).addTo(map).bindPopup(e.latlng + " +/- " + Math.round(radius) + " m").openPopup();
     }
 
     function onLocationError(e) {
