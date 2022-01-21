@@ -133,7 +133,7 @@ map.on('click', onMapClick);
       var radius = e.accuracy / 2;
 
       current_position = L.marker(e.latlng).addTo(map)
-        .bindPopup(e.latlng + "+/-" + radius + " m").openPopup();
+        .bindPopup(e.latlng + " +/-" + Math.round(radius) + " m").openPopup();
 
       current_accuracy = L.circle(e.latlng, radius,{color:'red'}).addTo(map);
     }
