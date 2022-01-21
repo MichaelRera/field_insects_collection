@@ -69,7 +69,7 @@
         .openOn(map);
   }
 
-//map.on('click', onMapClick);
+map.on('click', onMapClick);
   
     var polygon1 = L.polygon([
       [8.700881, -83.207703],
@@ -86,6 +86,14 @@
       {color: 'purple'}).addTo(map).bindPopup('Traps set up on 17/01/22');
      
      var polygon3 = L.polygon([
+      [8.681027, -83.197703],
+      [8.673179, -83.202059],
+      [8.660536, -83.198712],
+      [8.658033, -83.194034],
+      [8.659815, -83.191717]],
+      {color: 'orange'}).addTo(map).bindPopup('Traps set up on 18/01/22');
+    
+      var polygon3 = L.polygon([
       [8.681027, -83.197703],
       [8.673179, -83.202059],
       [8.660536, -83.198712],
