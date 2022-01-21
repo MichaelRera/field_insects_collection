@@ -150,8 +150,8 @@ map.on('click', onMapClick);
       map.locate({setView: false, maxZoom: 16});
     }
 
-    // call locate every 3 seconds... forever
-    setInterval(locate, 3000);
+    // call locate every 6 seconds... forever
+    setInterval(current_position,current_accuracy, 6000);
     
     
     
