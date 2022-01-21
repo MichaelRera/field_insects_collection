@@ -147,11 +147,11 @@ map.on('click', onMapClick);
 
     // wrap map.locate in a function    
     function locate() {
-      map.locate({setView: false, maxZoom: 16});
+      map.locate({setView: false});
     }
 
     // call locate every 6 seconds... forever
-    setInterval({current_position,current_accuracy}, 6000);
+    setInterval(locate, 6000);
     
     
     
