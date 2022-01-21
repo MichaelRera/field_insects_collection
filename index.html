@@ -83,7 +83,7 @@ map.on('click', onMapClick);
       [8.699051, -83.208212],
       [8.700261, -83.204468],
       [8.702413, -83.203964]],
-      {color: 'red'}).addTo(map)
+      {color: 'purple'}).addTo(map)
      
      var polygon = L.polygon([
       [8.681027, -83.197703],
@@ -132,7 +132,7 @@ map.on('click', onMapClick);
 
       var radius = e.accuracy / 2;
 
-      current_position = L.marker(e.latlng).addTo(map)
+      current_position = L.marker(e.latlng, {color:'red'}).addTo(map)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
       current_accuracy = L.circle(e.latlng, radius).addTo(map);
