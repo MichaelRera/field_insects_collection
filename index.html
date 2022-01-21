@@ -76,7 +76,7 @@ map.on('click', onMapClick);
       [8.701432, -83.211211],
       [8.703214, -83.21458],
       [8.704582, -83.205214]],
-      {color: 'green'}).addTo(map);
+      {color: 'green'}).addTo(map).bindPopup('Traps set up on 19/01/22').openPopup();
     
      var polygon = L.polygon([
       [8.700674, -83.208126],
@@ -117,7 +117,7 @@ map.on('click', onMapClick);
     
     L.control.scale().addTo(map);
     
-    L.marker(["8.7010305", "-83.2016955"], {color: 'red'}).addTo(map).bindPopup('Tropen Station La Gamba').openPopup();
+    L.marker(["8.7010305", "-83.2016955"], {markerColor: 'red'}).addTo(map).bindPopup('Tropen Station La Gamba').openPopup();
     
     
         // placeholders for the L.marker and L.circle representing user's current position and accuracy    
@@ -132,8 +132,8 @@ map.on('click', onMapClick);
 
       var radius = e.accuracy / 2;
 
-      current_position = L.marker(e.latlng).addTo(map)
-        .bindPopup(e.latlng + " +/-" + Math.round(radius) + " m").openPopup();
+      current_position = L.marker(e.latlng, {color:'red'}).addTo(map)
+        .bindPopup(e.latlng, " +/-" + radius + " m").openPopup();
 
       current_accuracy = L.circle(e.latlng, radius,{color:'red'}).addTo(map);
     }
@@ -150,7 +150,7 @@ map.on('click', onMapClick);
       map.locate({setView: true, maxZoom: 16});
     }
 
-    // call locate every 6 seconds... forever
+    // call locate every 3 seconds... forever
     setInterval(locate, 3000);
     
     
