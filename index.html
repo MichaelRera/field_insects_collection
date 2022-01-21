@@ -83,7 +83,7 @@ map.on('click', onMapClick);
       [8.699051, -83.208212],
       [8.700261, -83.204468],
       [8.702413, -83.203964]],
-      {color: 'purple'}).addTo(map)
+      {color: 'purple'}).addTo(map).bindPopup('Traps set up on 17/01/22').openPopup();
      
      var polygon = L.polygon([
       [8.681027, -83.197703],
@@ -91,7 +91,7 @@ map.on('click', onMapClick);
       [8.660536, -83.198712],
       [8.658033, -83.194034],
       [8.659815, -83.191717]],
-      {color: 'orange'}).addTo(map)
+      {color: 'orange'}).addTo(map).bindPopup('Traps set up on 18/01/22').openPopup();
 
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
@@ -151,7 +151,7 @@ map.on('click', onMapClick);
     }
 
     // call locate every 3 seconds... forever
-    setInterval(locate, 3000);
+    setInterval(locate, 6000);
     
     
     
