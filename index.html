@@ -119,7 +119,7 @@
     
     L.marker(["8.7010305", "-83.2016955"]).addTo(map).bindPopup('Tropen Station La Gamba').openPopup();
    
-    
+   if (L.Browser.mobile) { 
      // placeholders for the L.marker and L.circle representing user's current position and accuracy    
     var current_position, current_accuracy;
 
@@ -152,7 +152,7 @@
 
     // call locate every 3 seconds... forever
     setInterval(locate, 3000);
-    
+   }
     
     
 
