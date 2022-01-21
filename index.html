@@ -76,7 +76,7 @@ map.on('click', onMapClick);
       [8.701432, -83.211211],
       [8.703214, -83.21458],
       [8.704582, -83.205214]],
-      {color: 'green'}).addTo(map).bindPopup('Traps set up on 19/01/22').openPopup();
+      {color: 'green'}).addTo(map);
     
      var polygon = L.polygon([
       [8.700674, -83.208126],
@@ -151,7 +151,7 @@ map.on('click', onMapClick);
     }
 
     // call locate every 6 seconds... forever
-    setInterval(locate, 6000);
+    setInterval(locate, 3000);
     
     
     
