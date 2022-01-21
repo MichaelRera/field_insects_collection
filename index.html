@@ -71,21 +71,21 @@
 
 //map.on('click', onMapClick);
   
-    var polygon = L.polygon([
+    var polygon1 = L.polygon([
       [8.700881, -83.207703],
       [8.701432, -83.211211],
       [8.703214, -83.21458],
       [8.704582, -83.205214]],
       {color: 'green'}).addTo(map).bindPopup('Traps set up on 19/01/22');
     
-     var polygon = L.polygon([
+     var polygon2 = L.polygon([
       [8.700674, -83.208126],
       [8.699051, -83.208212],
       [8.700261, -83.204468],
       [8.702413, -83.203964]],
       {color: 'purple'}).addTo(map).bindPopup('Traps set up on 17/01/22');
      
-     var polygon = L.polygon([
+     var polygon3 = L.polygon([
       [8.681027, -83.197703],
       [8.673179, -83.202059],
       [8.660536, -83.198712],
@@ -117,7 +117,7 @@
     
     L.control.scale().addTo(map);
     
-    L.marker([["8.7010305", "-83.2016955"]], {color: 'red'}).addTo(map).bindPopup('Tropen Station La Gamba').openPopup();
+    L.marker(["8.7010305", "-83.2016955"]).addTo(map).bindPopup('Tropen Station La Gamba').openPopup();
    
     
     
