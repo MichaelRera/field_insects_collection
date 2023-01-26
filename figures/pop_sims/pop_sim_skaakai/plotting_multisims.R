@@ -2,19 +2,38 @@ library(ggplot2)
 library(readr)
 library(tidyverse)
 
-data_output_simu_model2 <- read_delim(file.choose(), delim = ";", escape_double = FALSE, trim_ws = TRUE)
+#library(Rcmdr)
 
-params <- data_output_simu_model2[,1:7]
-sims_popsize <- data_output_simu_model2[,8:57]
-colnames(sims_popsize)<-seq(0:49)
-sims_smurfprop <- data_output_simu_model2[,58:107]
-sims_agepyrns <- data_output_simu_model2[,108:137]
-colnames(sims_agepyrns)<-seq(0:29)
+data4plot <- as.data.frame(cbind(paste("cond_",seq(1:21),sep=""),read_delim(file.choose(), delim = ";", escape_double = FALSE, trim_ws = TRUE)))
+colnames(data4plot)[1] <- "conditions"
 
-sims_agepyrs <- data_output_simu_model2[,138:167]
-colnames(sims_agepyrs)<-seq(0:29)
+params <- data4plot[,1:8]
 
-ggplot(data_output_simu_model2)
+pop_size <- as.data.frame(cbind(seq(0:49),t(data4plot[,9:58])))
+colnames(pop_size) <- c("time",data4plot$conditions)
+
+Smurf_prop <- as.data.frame(cbind(seq(0:49),t(data4plot[,59:108])))
+colnames(Smurf_prop) <- c("time",data4plot$conditions)
+
+pyr_age_ns <- as.data.frame(cbind(seq(0:29),t(data4plot[,109:138])))
+colnames(pyr_age_ns) <- c("time",data4plot$conditions)
+
+pyr_age_s <- as.data.frame(cbind(seq(0:29),t(data4plot[,139:168])))
+colnames(pyr_age_s) <- c("time",data4plot$conditions)
 
 
-pre_treated_data <- as.data.frame(cbind(t(data_output_simu_model2[,8:57]), t(data_output_simu_model2[,58:107])))
+
+sub_selec <- params %>% filter(compet==1e-04) %>% filter(compet2==1e-06) %>% select(conditions)
+
+
+
+ggplot(pop_size, aes(x = time)) + 
+  geom_line(aes(y=cond_1)) + 
+  geom_line(aes(y=cond_5)) + 
+  geom_line(aes(y=cond_8)) 
+
+
+ggplot(Smurf_prop, aes(x = time)) + 
+  geom_line(aes(y=cond_1)) + 
+  geom_line(aes(y=cond_5)) + 
+  geom_line(aes(y=cond_8)) 
